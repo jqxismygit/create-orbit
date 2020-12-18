@@ -17,7 +17,7 @@
     "lib"
   ],
   "bin": {
-    "create-umi": "cli.js"
+    "create-orbit": "cli.js"
   },
   "scripts": {
     "prepublishOnly": "np --no-cleanup --yolo --no-publish",
