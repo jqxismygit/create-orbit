@@ -1,0 +1,55 @@
+{
+  "name": "create-orbit",
+  "version": "0.1.0",
+  "description": "create orbit module.",
+  "homepage": "https://github.com/jqxismygit/create-orbit",
+  "bugs": {
+    "url": "https://github.com/jqxismygit/create-orbit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jqxismygit/create-orbit"
+  },
+  "license": "MIT",
+  "files": [
+    "cli.js",
+    "index.js",
+    "lib"
+  ],
+  "bin": {
+    "create-umi": "cli.js"
+  },
+  "scripts": {
+    "prepublishOnly": "np --no-cleanup --yolo --no-publish",
+    "prettier": "prettier -c --write '**/*'"
+  },
+  "dependencies": {
+    "chalk": "4.0.0",
+    "clipboardy": "^2.1.0",
+    "debug": "^4.1.1",
+    "execa": "^1.0.0",
+    "fs-extra": "^8.0.1",
+    "glob": "^7.1.4",
+    "inquirer": "^6.4.1",
+    "mkdirp": "^0.5.1",
+    "prettier": "^2.0.0",
+    "semver": "^6.1.0",
+    "sort-package-json": "^1.22.1",
+    "sylvanas": "^0.6.1",
+    "typescript": "^4.0.0",
+    "umi-utils": "^1.5.2",
+    "yargs-parser": "^13.1.1",
+    "yeoman-environment": "^2.8.0",
+    "yeoman-generator": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.19",
+    "coffee": "^5.2.1",
+    "mm": "^2.5.0",
+    "np": "^5.0.1",
+    "umi-test": "^1.8.2"
+  },
+  "authors": [
+    "king <117745900@qq.com> (https://github.com/jqxismygit)"
+  ]
+}
