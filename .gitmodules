@@ -3,3 +3,8 @@
   path = packages/orbit-res
   url = git@gitlab.sensoro.com:lins/frontend/orbit-res.git
       
+
+[submodule "packages/orbit-graph"]
+  path = packages/orbit-graph
+  url = git@gitlab.sensoro.com:lins/frontend/orbit-graph.git
+      
