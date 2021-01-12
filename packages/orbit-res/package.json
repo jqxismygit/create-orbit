@@ -1,0 +1,45 @@
+{
+    "name": "@sensoro/res",
+    "private": false,
+    "version": "0.0.1",
+    "scripts": {
+        "start": "umi dev",
+        "build": "umi build",
+        "build:com": "father-build",
+        "postinstall": "umi generate tmp",
+        "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+        "test": "umi-test",
+        "test:coverage": "umi-test --coverage"
+    },
+    "gitHooks": {
+        "pre-commit": "lint-staged"
+    },
+    "main": "lib/index.js",
+    "files": [
+        "lib"
+    ],
+    "lint-staged": {
+        "*.{js,jsx,less,md,json}": [
+            "prettier --write"
+        ],
+        "*.ts?(x)": [
+            "prettier --parser=typescript --write"
+        ]
+    },
+    "dependencies": {
+                    "@sensoro/core": "0.0.18",
+                "@umijs/preset-react": "1.x",
+        "@umijs/test": "^3.2.10",
+        "lint-staged": "^10.0.7",
+        "prettier": "^1.19.1",
+        "umi": "^3.2.10",
+        "yorkie": "^2.0.0"
+    },
+    "devDependencies": {
+        "@umijs/plugin-qiankun": "^2.17.5",
+                    "umi-plugin-core-preset": "^0.7.2",
+                "umi-plugin-package-info": "^0.1.2",
+        "umi-plugin-qiankun-development": "^0.1.4",
+        "umi-plugin-symlinks": "^0.0.1"
+    }
+}
