@@ -1,0 +1,5 @@
+
+[submodule "packages/orbit-res"]
+  path = packages/orbit-res
+  url = git@gitlab.sensoro.com:lins/frontend/orbit-res.git
+      
