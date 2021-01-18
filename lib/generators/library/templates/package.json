@@ -27,8 +27,12 @@
         ]
     },
     "dependencies": {
-        <% if (useCore || corePreset) { -%>
-            "@sensoro/core": "0.0.18",
+        <% if (features.includes('core') || features.includes('core-preset')) { -%>
+            "@sensoro/core": "1.0.0",
+        <% } -%>
+
+        <% if (features.includes('sensoro-design')) { -%>
+            "@sensoro/sensoro-design": "^1.33.4",
         <% } -%>
         "@umijs/preset-react": "1.x",
         "@umijs/test": "^3.2.10",
@@ -39,11 +43,11 @@
     },
     "devDependencies": {
         "@umijs/plugin-qiankun": "^2.17.5",
-        <% if (corePreset) { -%>
+        <% if (features.includes('core-preset')) { -%>
             "umi-plugin-core-preset": "^0.7.2",
         <% } -%>
         "umi-plugin-package-info": "^0.1.2",
-        "umi-plugin-qiankun-development": "^0.1.4",
+        "umi-plugin-qiankun-development": "^0.1.9",
         "umi-plugin-symlinks": "^0.0.1"
     }
 }

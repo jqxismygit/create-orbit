@@ -1,19 +1,16 @@
-FROM harbor.sensoro.com/library/node:10 AS yarn
-# RUN npm i yarn -g
+FROM harbor.sensoro.com/library/node:10-frontend AS yarn
+
 
 FROM yarn AS builder
-COPY package.json yarn.lock .npmrc ./
+COPY package.json .npmrc ./
 RUN yarn
 ADD . .
 ARG CONFIG_ENV
 RUN yarn run build
+RUN rm -rf /usr/local/share/.cache/yarn /node_modules
 
-FROM yarn
-COPY --from=harbor.sensoro.com/library/nginx:qshell-v2.3.8 /bin/qshell /bin/qshell
-RUN apk add --no-cache nginx
+
+FROM nginx:alpine
 COPY --from=builder /opt/app/dist /opt/app/<%= name %>
 COPY package.json .
-COPY yarn.lock .
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
-COPY nginx/start-nginx.sh /opt/app
-CMD ["sh", "/opt/app/start-nginx.sh"]

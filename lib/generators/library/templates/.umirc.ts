@@ -13,4 +13,16 @@ export default defineConfig({
   qiankunDev: {
     devExternal: false,
   },
+  <% if (features.includes('sensoro-design')) { -%>
+    extraBabelPlugins: [
+      [
+        'import',
+        {
+          libraryName: '@sensoro/sensoro-design',
+          libraryDirectory: 'es',
+          style: true,
+        },
+      ],
+    ],
+<% } -%>
 });

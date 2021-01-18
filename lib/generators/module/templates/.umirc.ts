@@ -9,5 +9,17 @@ export default defineConfig({
   dynamicImport: {},
   qiankun: {
     slave: {},
-  }
+  },
+  <% if (features.includes('sensoro-design')) { -%>
+    extraBabelPlugins: [
+      [
+        'import',
+        {
+          libraryName: '@sensoro/sensoro-design',
+          libraryDirectory: 'es',
+          style: true,
+        },
+      ],
+    ],
+<% } -%>
 });
