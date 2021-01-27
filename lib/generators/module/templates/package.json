@@ -48,6 +48,7 @@
         <% } -%>
         "umi-plugin-package-info": "^0.1.2",
         "umi-plugin-qiankun-development": "^0.1.9",
-        "umi-plugin-symlinks": "^0.0.1"
+        "umi-plugin-symlinks": "^0.0.1",
+        "umi-plugin-route-loading": "0.1.0"
     }
 }
