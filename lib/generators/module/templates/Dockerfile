@@ -1,4 +1,4 @@
-FROM harbor.sensoro.com/library/node:10-frontend AS yarn
+FROM harbor.sensoro.com/library/node:10 AS yarn
 
 
 FROM yarn AS builder

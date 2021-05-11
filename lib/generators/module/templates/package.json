@@ -44,11 +44,14 @@
     "devDependencies": {
         "@umijs/plugin-qiankun": "^2.17.5",
         <% if (features.includes('core-preset')) { -%>
-            "umi-plugin-core-preset": "^0.7.2",
+            "umi-plugin-core-preset": "^0.7.5",
         <% } -%>
         "umi-plugin-package-info": "^0.1.2",
         "umi-plugin-qiankun-development": "^0.1.9",
         "umi-plugin-symlinks": "^0.0.1",
-        "umi-plugin-route-loading": "0.1.0"
+        "umi-plugin-route-loading": "0.1.0",
+        <% if (dynamicModule) { -%>
+            "umi-plugin-qiankun-dynamic-module": "0.5.0"
+        <% } -%>
     }
 }
