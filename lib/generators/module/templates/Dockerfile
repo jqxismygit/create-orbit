@@ -1,13 +1,13 @@
-FROM harbor.sensoro.com/library/node:10 AS yarn
+FROM harbor.sensoro.com/library/node:12 AS yarn
 
 
 FROM yarn AS builder
-COPY package.json .npmrc ./
+COPY .npmrc ./
+COPY package.prod.json ./package.json
 RUN yarn
 ADD . .
 ARG CONFIG_ENV
 RUN yarn run build
-RUN rm -rf /usr/local/share/.cache/yarn /node_modules
 
 
 FROM nginx:alpine
